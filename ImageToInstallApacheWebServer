@@ -1,0 +1,18 @@
+#Docker file for installing Apache
+# In addition to its HTTP server capabilities, NGINX can also function as a
+#.... proxy server (IMPAP, POP3 or SMTP) and a reserve Proxy and load balancer
+#..... for HTTP, TCP, and UDP servers
+
+
+FROM Ubuntu:12.04
+
+MAINTAINER dieudonnemunganga
+RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+
+EXPOSE 80
+
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
