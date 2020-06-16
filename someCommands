@@ -11,3 +11,7 @@ sudo docker images
 sudo docker run -p 80:80 --name=App1 myapacheimage
 
 #in the browser, access the localhost:80 to see the output
+
+
+
+---> NEXT :Dockerfile for Installing  NGINX
