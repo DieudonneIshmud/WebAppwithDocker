@@ -1,0 +1,13 @@
+
+
+#After creating the ImageToInstallApacheWebServer Dockerile we do the following
+#build the docker image of a Docker file
+sudo docker build -t myapacheimage .
+
+#list all docker images
+sudo docker images
+
+#run the image created to get container, specify the port mapping and name the container created "App1"
+sudo docker run -p 80:80 --name=App1 myapacheimage
+
+#in the browser, access the localhost:80 to see the output
